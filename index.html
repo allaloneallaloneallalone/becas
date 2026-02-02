@@ -1,3 +1,84 @@
-hello world!
-<br>
-this is becas.dog
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+
+    <title>becas.dog</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url(img/photo-1617565085015-13cb9d366120.avif);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1 {
+            font-family: "Monsieur La Doulaise", cursive;
+            font-size: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 10px;
+        }
+        h2 {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            margin: 15px;
+            letter-spacing: 10px;
+        }
+        p {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            margin: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+        div#images {
+            display: flex;
+            flex-direction: column;
+        }
+        .first{
+            display: flex;
+            justify-content: center;
+        }
+        .second{
+            display: flex;
+            justify-content: center;
+        }
+        .first img{
+            height: 300px;
+            margin: 100px;
+        }
+        .second img{
+            height: 300px;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>becas.dog</h1>
+    <div>
+        <h2>what is this?</h2>
+        <p>hello viewer! this is a website that is dedicated to show a few pictures of pictures of my dog,
+            who unfortunately died back in November of 2025, i guess you could say that this is my way of "coping".
+        </p>
+    </div>
+    <div id="images">
+        <div class="first">
+            <img src="img/img1.jpg" alt="">
+            <img src="img/img2.jpg" alt="">
+        </div>
+        <div class="second">
+            <img src="img/img3.jpg" alt="">
+            <img src="img/img4.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
