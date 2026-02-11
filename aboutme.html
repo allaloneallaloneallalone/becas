@@ -6,7 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monsieur+La+Doulaise&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
     <title>becas.dog - who am i?</title>
     <style>
         body {
@@ -18,7 +20,7 @@
         }
         section.first {
             height: 600px;
-            margin-top: 50px;
+            margin-top: 0.2em;
             display: flex;
             justify-content: center;
         }
@@ -27,8 +29,8 @@
             font-family: "Mulish", sans-serif;
             display: flex;
             width: 350px;
-            margin: 70px;
-            margin-top: 40px;
+            margin: 0.145em;
+            margin-top: 0.5em;
             box-shadow: inset 0 0 0 0 grey;
             padding: 0 .25rem;
             transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
@@ -43,24 +45,25 @@
 
         }
         div#description h2 {
-            font-family: "Mulish", sans-serif;
+            font-family: "Gravitas One", serif;
+            letter-spacing: 20px;
             font-size: 50px;
-            margin-top: 70px;
+            margin-top: 1.7em;
         }
         div#me {
             display: flex;
         }
         div#me p {
             font-family: "Mulish", sans-serif;
-            font-size: 35px;
+            font-weight: 500;
+            font-size: 2.1em;
             width: 350px;
         }
         div#me img {
-            margin-top: 20px;
-            margin-left: 100px;
+            margin-left: 2em;
         }
         section.liking {
-            height: 2000px;
+            height: auto;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -70,11 +73,11 @@
         .scroll-container {
             display: flex;
             white-space: nowrap;
-            margin-top: 175px;
+            margin-top: 10.13em;
         }
         .scroll-container h1 {
             font-family: "Mulish", sans-serif;
-            font-size: 55px;
+            font-size: 2em;
             text-transform: uppercase;
             margin: 0;
             padding-right: 50px; 
@@ -88,40 +91,40 @@
         
         .liking div.hobbies {
             display: flex;
-            margin-top: 110px;
+            margin-top: 5em;
         }
         .hobbies img {
-            width: 512px;
-            height: 512px;
+            height: 25vw;
         }
         .hobbies p {
-            font-size: 45px;
+            font-size: 2.3em;
             font-family: "Mulish", sans-serif;
             width: 700px;
             text-align: end;
-            margin-left: 200px;
+            margin-left: 4em;
         }
         div.albums{
-            margin-top: 10px;
+            margin-top: 0.625em;
         }
         .albums h2 {
-            font-size: 45px;
+            font-size: 2.8125em;
             font-family: "Mulish", sans-serif;
             display: flex;
             justify-content: center;
-            margin-top: 70px;
-            letter-spacing: 35px;
+            margin-top: 0.145em;
+            letter-spacing: 10px;
         }
         div.covers {
             display: flex;
             flex-direction: row;
+            justify-content: center;
         }
         div.covers img{
-            height: 250px;
-            padding: 45px;
+            height: 15vw;
+            margin: 1em;
             transition: transform 0.3s ease;
             letter-spacing: 5px;
-            border-radius: 75px;
+            border-radius: 25px;
         }
         div.covers img:hover{
             transform: scale(1.15);
@@ -129,15 +132,39 @@
         div.covers a {
             justify-content: center;
             display: flex;
-            font-size: 25px;
+            font-size: 1.5625em;
             font-family: "Mulish", sans-serif;
             font-weight: bold;
             font-style: italic;
             text-transform: lowercase;
-            letter-spacing: 3px;
             text-decoration: none;
             color: black;
         }
+        div.fursona {
+            display: none
+        }
+        div.fursona h1 {
+            font-size: 100px;
+            margin: 50px;
+            font-family: "Mulish", sans-serif;
+            display: flex;
+            z-index: 1000;
+        }
+        .showcase {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+        .images {
+            flex: 50%;
+            padding: 0 4px;
+        }
+        .images img {
+            flex: 50%;
+            padding: 0 4px;
+            height: 20vw;
+        }
+
     </style>
 </head>
 <body>
@@ -153,8 +180,8 @@
     </section>
     <section class="liking">
     <div class="scroll-container">
-        <h1>what do i like? • what do i like? • what do i like? • what do i like? •</h1>
-        <h1>what do i like? • what do i like? • what do i like? • what do i like? •</h1>
+        <h1>what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • </h1>
+        <h1>what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • </h1>
     </div>
     <div class="hobbies">
         <img src="img/5.gif" alt="">
@@ -165,11 +192,11 @@
         <div class="covers">
             <div class="census">
             <img src="img/census.jpg" alt="">
-            <a href="">census designated</a>
+            <a href="">census <br> designated</a>
             </div>
             <div class="minf">
             <img src="img/mayitneverfalter.png" alt="">
-            <a href="">may it never falter</a>
+            <a href="">may it <br> never falter</a>
             </div>
             <div class="whitetiger">
             <img src="img/whitetiger.jpg" alt="">
@@ -185,6 +212,21 @@
             </div>
         </div>
     </div>
+        <div class="fursona">
+        <h1>fursona</h1>
+            <div class="showcase">
+                <div class="images">
+                    <img src="img/luna1.jpg" alt="">
+                    <img src="img/luna2.jpg" alt="">
+                    <img src="img/luna3.jpg" alt="">
+                    <img src="img/luna4.jpg" alt="">
+                    <img src="img/luna5.jpg" alt="">
+                    <img src="img/luna6.jpg" alt="">
+                    <img src="img/luna7.jpg" alt="">
+                </div>
+            </div>
+    </div>
+</section>
 </section>
 </body>
 </html>
