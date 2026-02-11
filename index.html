@@ -5,80 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monsieur+La+Doulaise&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>becas.dog</title>
     <style>
         body {
-            margin: 0;
-            background-image: url(img/photo-1617565085015-13cb9d366120.avif);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        h1 {
-            font-family: "Monsieur La Doulaise", cursive;
-            font-size: 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: 10px;
-        }
-        h2 {
-            font-family: "Josefin Sans", sans-serif;
-            font-size: 40px;
-            display: flex;
-            justify-content: center;
-            margin: 15px;
-            letter-spacing: 10px;
-        }
-        p {
-            font-family: "Josefin Sans", sans-serif;
-            font-size: 25px;
-            display: flex;
-            justify-content: center;
-            margin: 25px;
-            text-align: center;
-            font-weight: 600;
-        }
-        div#images {
             display: flex;
             flex-direction: column;
-        }
-        .first{
-            display: flex;
             justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
-        .second{
-            display: flex;
-            justify-content: center;
+        html, body {
+            height:100%;
+            width:100%;
         }
-        .first img{
-            height: 300px;
-            margin: 100px;
+        .autoheight {
+            height:100%;
         }
-        .second img{
-            height: 300px;
-            margin: 100px;
+        h1 {
+            font-family: "Mulish", sans-serif;
+            font-optical-sizing: auto;
+            font-style: italic;
+            font-size: 75px;
+            margin: 10px;
         }
+        nav a {
+            font-family: "Mulish", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            margin: 20px;
+            box-shadow: inset 0 0 0 0 grey;
+            padding: 0 .25rem;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        }
+        nav a:hover {
+            color: #fff;
+            box-shadow: inset 200px 0 0 0 black;
+}
     </style>
 </head>
 <body>
-    <h1>becas.dog</h1>
-    <div>
-        <h2>what is this?</h2>
-        <p>hello viewer! this is a website that is dedicated to show a few pictures of pictures of my dog,
-            who unfortunately died back in November of 2025, i guess you could say that this is my way of "coping".
-        </p>
-    </div>
-    <div id="images">
-        <div class="first">
-            <img src="img/img1.jpg" alt="">
-            <img src="img/img2.jpg" alt="">
-        </div>
-        <div class="second">
-            <img src="img/img3.jpg" alt="">
-            <img src="img/img4.jpg" alt="">
-        </div>
-    </div>
+        <h1>becas.dog</h1>
+        <nav>
+        <a href="aboutme.html">who am i?</a>
+        <a href="becas.html">becas</a>
+        </nav>
+        <img src="img/3.gif" alt="">
 </body>
 </html>
