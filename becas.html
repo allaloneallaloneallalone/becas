@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monsieur+La+Doulaise&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>becas.dog - becas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden; 
+        }
+        section#gallery {
+            overflow: hidden;
+            width: 100%;
+        }
+        .text-scroll {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+        .text-content {
+            display: flex;
+        }
+        .text-content h1 {
+            font-family: "Mulish", sans-serif;
+            font-size: 3.5em;
+            margin: 0;
+            padding: 0.5em 20px;
+            white-space: nowrap;
+            padding-right: 50px;
+        }
+        .grid {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+        .images {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .images img {
+            height: 45dvh;
+            width: auto;
+            padding: 0 4px;
+            display: block;
+        }
+        section#description {
+            display: flex;
+            justify-content: center;
+        }
+        .abouther{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .abouther h2{
+            margin: 1em;
+            font-family: "Mulish", sans-serif;
+            font-size: 2.5em;
+            text-shadow: 0px 0px 24px rgba(0,0,0,1);
+            letter-spacing: 20px;
+        }
+        .abouther p{
+            margin: 0;
+            font-family: "Mulish", sans-serif;
+            font-size: 1.25em;
+            width: 50em;
+            font-weight: 700;
+            text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        @media screen and (max-width: 900px) {
+            .images img {
+                height: 30dvh;
+            }
+            .abouther h2{
+                letter-spacing: 7px;
+                font-size: 2.2em;
+            }
+            .abouther p {
+                width: 15em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="gallery">
+        <div class="text-scroll" id="text-container">
+            <div class="text-content" id="text-original">
+                <h1>• becas •</h1>
+            </div>
+        </div>
+        <div class="grid" id="scroll-container">
+            <div class="images" id="original-content">
+                <img src="img/img1.jpg" alt="">
+                <img src="img/img2.jpg" alt="">
+                <img src="img/img3.jpg" alt="">
+                <img src="img/img4.jpg" alt="">
+                <img src="img/img5.jpg" alt="">
+                <img src="img/img6.jpg" alt="">
+                <img src="img/img7.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="description">
+        <div class="abouther">
+            <h2>Who is becas?</h2>
+            <p>Becas was my 11 year old dog that I've had since 2014, I grew up with her ever since I was a kid and she meant the whole world to me, she always looked up to me and I always felt thankful for having a little animal friend by my side at all times, protecting me, etc.
+                However, in October of 2025, she started getting weaker by the day, which made me and my family worry a lot, so we tried our best to comfort her, as we didn't how long she could last, and we didn't also have any money for any vet trips at the time.
+                Unfortunately, she died in November of 2025. May her rest in peace.
+            </p>
+        </div>
+    </section>
+    <script src="becas.js"></script>
+</body>
+</html>

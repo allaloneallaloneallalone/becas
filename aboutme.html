@@ -11,19 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
     <title>becas.dog - who am i?</title>
     <style>
-        body {
-            margin: 0
+        body { 
+            margin: 0; 
+            width: 100%; 
+            height: 100%; 
         }
-        body, html{
-            width: 100%;
-            height: 100%;
-        }
+        
         section.first {
             height: 600px;
             margin-top: 0.2em;
             display: flex;
             justify-content: center;
         }
+
         section.first h1 {
             font-size: 125px;
             font-family: "Mulish", sans-serif;
@@ -36,22 +36,21 @@
             transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
             height: 640px;
         }
-        section.first h1:hover{
+
+        section.first h1:hover {
             color: #fff;
             box-shadow: inset 325px 0 0 0 black;
-            height: 640px;
         }
-        div#description {
 
-        }
         div#description h2 {
             font-family: "Gravitas One", serif;
             letter-spacing: 20px;
             font-size: 50px;
             margin-top: 1.7em;
         }
-        div#me {
-            display: flex;
+
+        div#me { 
+            display: flex; 
         }
         div#me p {
             font-family: "Mulish", sans-serif;
@@ -59,42 +58,45 @@
             font-size: 2.1em;
             width: 350px;
         }
-        div#me img {
-            margin-left: 2em;
+        div#me img { 
+            margin-left: 2em; 
         }
+
         section.liking {
-            height: auto;
+            height: 1500px;
             overflow: hidden;
             display: flex;
             align-items: center;
             flex-direction: column;
         }
-
         .scroll-container {
             display: flex;
             white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
             margin-top: 10.13em;
+            cursor: default;
         }
-        .scroll-container h1 {
+
+        .scroll-content {
+            display: flex;
             font-family: "Mulish", sans-serif;
             font-size: 2em;
             text-transform: uppercase;
             margin: 0;
-            padding-right: 50px; 
-            animation: scroll-left 10s linear infinite;
+            will-change: transform;
         }
 
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } 
+        .scroll-item {
+            padding-right: 50px;
         }
-        
-        .liking div.hobbies {
-            display: flex;
-            margin-top: 5em;
+
+        .hobbies { 
+            display: flex; 
+            margin-top: 5em; 
         }
-        .hobbies img {
-            height: 25vw;
+        .hobbies img { 
+            height: 25vw; 
         }
         .hobbies p {
             font-size: 2.3em;
@@ -103,31 +105,28 @@
             text-align: end;
             margin-left: 4em;
         }
-        div.albums{
-            margin-top: 0.625em;
+
+        div.albums { 
+            margin-top: -5em; 
+            width: 100%; 
         }
-        .albums h2 {
-            font-size: 2.8125em;
-            font-family: "Mulish", sans-serif;
-            display: flex;
-            justify-content: center;
-            margin-top: 0.145em;
-            letter-spacing: 10px;
-        }
+        
         div.covers {
+            margin-top: 5em;
             display: flex;
             flex-direction: row;
             justify-content: center;
         }
-        div.covers img{
+
+        div.covers img {
             height: 15vw;
             margin: 1em;
             transition: transform 0.3s ease;
-            letter-spacing: 5px;
-            border-radius: 25px;
+            box-shadow: 0px 0px 24px rgba(0,0,0,1);
         }
-        div.covers img:hover{
-            transform: scale(1.15);
+
+        div.covers img:hover { 
+            transform: scale(1.15); 
         }
         div.covers a {
             justify-content: center;
@@ -139,35 +138,63 @@
             text-transform: lowercase;
             text-decoration: none;
             color: black;
+            text-align: center;
+            text-shadow: 0px 0px 24px rgba(0,0,0,1);
         }
-        div.fursona {
-            display: none
+        @media screen and (max-width: 900px) {
+            section.first {
+                flex-direction: column;
+            }
+            section.first h1{
+                font-size: 2.3em;
+                margin-top: 4em;
+                margin-left: 0.8em;
+                justify-content: center;
+            }
+            section.first h1:hover {
+                box-shadow: inset 400px 0 0 0 black;
+            }
+            div#description h2 {
+                margin-top: none;
+                font-size: 2em;
+                justify-content: center;
+                display: flex;
+            }
+            div#me {
+                display: flex;
+                justify-content: center;
+            }
+            div#me p {
+                text-align: center;
+            }
+            .hobbies img {
+                display: none;
+            }
+            .hobbies p {
+                font-size: 1.5em;
+                text-align: center;
+                width: 16em;
+                font-weight: 500;
+                margin-left: 0;
+            }
+            div#me img {
+                display: none;
+            }
+            div.albums {
+                align-items: center;
+            }
+            div.covers {
+                flex-direction: column;
+                align-items: center;
+            }
+            div.covers img {
+                height: 30dvh;
+            }
         }
-        div.fursona h1 {
-            font-size: 100px;
-            margin: 50px;
-            font-family: "Mulish", sans-serif;
-            display: flex;
-            z-index: 1000;
-        }
-        .showcase {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 4px;
-        }
-        .images {
-            flex: 50%;
-            padding: 0 4px;
-        }
-        .images img {
-            flex: 50%;
-            padding: 0 4px;
-            height: 20vw;
-        }
-
     </style>
 </head>
 <body>
+
     <section class="first">
         <h1>Who the f*** am i?</h1>
         <div id="description">
@@ -178,55 +205,50 @@
             </div>
         </div>
     </section>
+
     <section class="liking">
-    <div class="scroll-container">
-        <h1>what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • </h1>
-        <h1>what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • what do i like? • </h1>
-    </div>
-    <div class="hobbies">
-        <img src="img/5.gif" alt="">
-        <p>I don't have many hobbies, because I barely have any interests, but if anything, I love spending time with friends and family, I also enjoy a LOT listening to music, I sometimes even make my own, despite that being quite rare, but it's still fun :)</p>
-    </div>
-    <div class="albums">
-        <h2>my favourite albums of all time</h2>
-        <div class="covers">
-            <div class="census">
-            <img src="img/census.jpg" alt="">
-            <a href="">census <br> designated</a>
-            </div>
-            <div class="minf">
-            <img src="img/mayitneverfalter.png" alt="">
-            <a href="">may it <br> never falter</a>
-            </div>
-            <div class="whitetiger">
-            <img src="img/whitetiger.jpg" alt="">
-            <a href="">white tiger</a>
-            </div>
-            <div class="frailty">
-            <img src="img/frailty.jpg" alt="">
-            <a href="">frailty</a>
-            </div>
-            <div class="2">
-            <img src="img/2..jpg" alt="">
-            <a href="">two</a>
+        <div class="scroll-container" id="scroll-likes">
+            <div class="scroll-content">
+                <span class="scroll-item">• what do i like? •</span>
             </div>
         </div>
-    </div>
-        <div class="fursona">
-        <h1>fursona</h1>
-            <div class="showcase">
-                <div class="images">
-                    <img src="img/luna1.jpg" alt="">
-                    <img src="img/luna2.jpg" alt="">
-                    <img src="img/luna3.jpg" alt="">
-                    <img src="img/luna4.jpg" alt="">
-                    <img src="img/luna5.jpg" alt="">
-                    <img src="img/luna6.jpg" alt="">
-                    <img src="img/luna7.jpg" alt="">
+
+        <div class="hobbies">
+            <img src="img/5.gif" alt="">
+            <p>I don't have many hobbies, because I barely have any interests, but if anything, I love spending time with friends and family, I also enjoy a LOT listening to music, I sometimes even make my own, despite that being quite rare, but it's still fun :)</p>
+        </div>
+
+        <div class="albums">
+            <div class="scroll-container" id="scroll-albums">
+                <div class="scroll-content">
+                    <span class="scroll-item">• my favourite albums? •</span>
                 </div>
             </div>
-    </div>
-</section>
-</section>
+            
+            <div class="covers">
+                <div class="census">
+                    <img src="img/census.jpg" alt=""><br>
+                    <a href="#">census <br> designated</a>
+                </div>
+                <div class="minf">
+                    <img src="img/mayitneverfalter.png" alt=""><br>
+                    <a href="#">may it <br> never falter</a>
+                </div>
+                <div class="whitetiger">
+                    <img src="img/whitetiger.jpg" alt=""><br>
+                    <a href="#">white tiger</a>
+                </div>
+                <div class="frailty">
+                    <img src="img/frailty.jpg" alt=""><br>
+                    <a href="#">frailty</a>
+                </div>
+                <div class="2">
+                    <img src="img/2..jpg" alt=""><br>
+                    <a href="#">two</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="aboutme.js"></script>
 </body>
 </html>
