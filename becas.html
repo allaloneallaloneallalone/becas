@@ -78,17 +78,115 @@
             margin-bottom: 30px;
             text-align: justify;
         }
-        @media screen and (max-width: 900px) {
-            .images img {
-                height: 30dvh;
-            }
-            .abouther h2{
-                letter-spacing: 7px;
-                font-size: 2.2em;
-            }
-            .abouther p {
-                width: 15em;
-            }
+
+        .block-content h2 {
+            font-family: "Mulish", sans-serif;
+	        text-align:center;
+	        margin:1em 0 0 0;
+	        font-size:2.5em;
+	        line-height:1;
+	        letter-spacing:0.02em;
+
+	            @media all and (min-width:40em) {
+	            font-size: 4.75em;
+	            }
+        }
+        .subtitle {
+            font-family: "Mulish", sans-serif;
+	        font-weight: 300;
+	        text-transform: uppercase;
+	        text-align: center;
+	        font-size: 1em;
+	        margin: 0.5em 0;
+        }
+        .heading-group {
+	        margin:0 0 3em 0;
+        }
+        .content h3 {
+            font-family: "Mulish", sans-serif;
+	        font-size: 1.2em;
+	        line-height:1.2;
+	        letter-spacing:0.02em;
+            color:#fff;
+
+	        @media all and (min-width:40em) {
+	            font-size: 2.5em;
+	        }
+        }
+        h1, h2, h3 {
+            font-family: "Mulish", sans-serif;
+	        font-weight:900;
+        }
+        p {
+            font-family: "Mulish", sans-serif;
+	        line-height:1.5;
+        }
+
+        .l-block-spacing {
+	        min-height:80vh;
+	        padding:2em 0 4em 0;
+        }
+        .l-contained {
+	        max-width:1000px;
+	        margin-left:auto;
+	        margin-right:auto;
+	        padding-left:1em;
+	        padding-right:1em;
+
+	        @media all and (min-width:40em) {
+		        padding-left:2em;
+		        padding-right:2em;
+	        }
+        }
+        .timeline-list {
+	        border-left: 5px solid #ccc;
+	        padding-bottom: 1em;
+	        position: relative;
+	        max-width:700px;
+	        margin:0 auto;
+        }
+
+        .t-block-teal h2 {
+            font-family: "Mulish", sans-serif;
+	        color:black;
+        }
+        .t-block-teal h3 {
+            font-family: "Mulish", sans-serif;
+	        color:black;
+            font-size: 2.3em;
+        }
+        .t-block-teal p {
+            font-family: "Mulish", sans-serif;
+	        color:black;
+            font-size: 1.2em;
+        }
+        .timeline-list li {
+	        margin:0 0 3em 0;
+	        padding:0 2em 0em 2em;
+            position: relative;
+        }
+        .timeline-list li:before {
+	        content: "";
+	        position: absolute;
+	        top: 0px;
+	        left: -1.45em;
+	        width: 30px;
+	        height: 30px;
+	        border-radius: 50%;
+	        background: none repeat scroll 0% 0% black;
+	        border: 5px solid #fff;
+        }
+            @media screen and (max-width: 900px) {
+                .images img {
+                    height: 30dvh;
+                }
+                .abouther h2{
+                    letter-spacing: 7px;
+                    font-size: 2.2em;
+                }
+                .abouther p {
+                    width: 15em;
+                }
         }
     </style>
 </head>
@@ -114,7 +212,7 @@
     <section id="description">
         <div class="abouther">
             <h2>Who is becas?</h2>
-            <p>Becas was my 11 year old dog that I've had since 2014, I grew up with her ever since I was a kid and she meant the whole world to me, she always looked up to me and I always felt thankful for having a little animal friend by my side at all times, protecting me, etc.
+            <p>Becas was my 11 year old, Beagle - Brittany dog that I've had since 2014, I grew up with her ever since I was a kid and she meant the whole world to me, she always looked up to me and I always felt thankful for having a little animal friend by my side at all times, protecting me, etc.
                 However, in October of 2025, she started getting weaker by the day, which made me and my family worry a lot, so we tried our best to comfort her, as we didn't how long she could last, and we didn't also have any money for any vet trips at the time.
                 Unfortunately, she died in November of 2025. May her rest in peace.
             </p>
@@ -122,11 +220,72 @@
         <div class="cronologia">
             <div class="container">
                 <div class="content">
-                    
+
                 </div>
             </div>
         </div>
     </section>
+    <section class="block-content t-block-teal l-block-spacing">
+					<div class="l-contained">
+						<ul class="timeline-list">
+							<li>
+                  <div class="content">
+								<h3>2025</h3>
+								<p>
+									A few months before her death
+								</p>
+                </div>
+							</li>
+							<li>
+                  <div class="content">
+								<h3>2024</h3>
+								<p>
+									What the fuck dude I seriously have 0 ideas on what to add
+                </div>
+							</li>
+							<li>
+                  <div class="content">
+								<h3>2022</h3>
+								<p>
+								Don't know what to add here either
+								</p>
+                </div>
+							</li>
+							<li>
+                  <div class="content">
+								<h3>2020</h3>
+								<p>
+									The pandemic hit me hard mentally at the time, but thankfully, I had an animal partner always by my side, that could check up on me and my mental health
+								</p>
+                </div>
+							</li>
+							<li>
+                  <div class="content">
+								<h3>2018</h3>
+								<p>
+									I don't know what to add here yet, so here's a really long stupid text about the fact that I.. well.. don't know what to add, it's quite interesting, right?
+								</p>
+                </div>
+							</li>
+							<li>
+                  <div class="content">
+								<h3>2016</h3>
+								<p>
+								First year that I went camping with her, it was really fun and she was always so enthusiastic about her surroundings at the time.
+								</p>
+                </div>
+							</li>
+							<li>
+                  <div class="content">
+								<h3>2014</h3>
+								<p>
+									Becas was born in the 18th of July 2014, from a Brittany and a Beagle, to now being my adopted dog which would stay with me for 11 years.
+								</p>
+                </div>
+            </li>
+						</ul>
+					</div>
+				</section>
     <script src="becas.js"></script>
 </body>
 </html>
