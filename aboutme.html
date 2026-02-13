@@ -43,8 +43,9 @@
         }
 
         div#description h2 {
-            font-family: "Gravitas One", serif;
+            font-family: "Mulish", sans-serif;
             letter-spacing: 20px;
+            font-weight: 1000;
             font-size: 50px;
             margin-top: 1.7em;
         }
@@ -147,7 +148,7 @@
             }
             section.first h1{
                 font-size: 2.3em;
-                margin-top: 4em;
+                margin-top: 6em;
                 margin-left: 0.8em;
                 justify-content: center;
             }
@@ -155,17 +156,32 @@
                 box-shadow: inset 400px 0 0 0 black;
             }
             div#description h2 {
-                margin-top: none;
+                margin: 1.5em;
                 font-size: 2em;
                 justify-content: center;
                 display: flex;
+                display: none;
             }
             div#me {
                 display: flex;
                 justify-content: center;
+                margin: 1em;
+                flex-direction: column;
+                align-items: center;
             }
             div#me p {
                 text-align: center;
+                font-size: 1.8em;
+                width: 12em;
+            }
+            section.liking {
+                height: auto;
+            }
+            .scroll-container {
+                margin-top: 0;
+            }
+            .hobbies {
+                margin-top: 0;
             }
             .hobbies img {
                 display: none;
@@ -173,12 +189,17 @@
             .hobbies p {
                 font-size: 1.5em;
                 text-align: center;
-                width: 16em;
+                width: 14em;
                 font-weight: 500;
                 margin-left: 0;
+                margin-top: 2em;
+                margin-bottom: 6em;
             }
             div#me img {
-                display: none;
+                height: 30dvh;
+                width: 17dvh;
+                margin-left: 0;
+                margin-bottom: 25em;
             }
             div.albums {
                 align-items: center;
@@ -189,6 +210,9 @@
             }
             div.covers img {
                 height: 30dvh;
+            }
+            div.covers a {
+                margin-bottom: 2em;
             }
         }
     </style>
