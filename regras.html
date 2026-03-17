@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras de Trânsito</title>
+    <link rel="icon" type="image/x-icon" href="img/rs.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+ 
+        body {
+            margin: 0;
+        }
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            position: fixed;
+            font-size: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            top: 0;
+            left: 0;
+            justify-content: space-between;
+            border-radius: 20px;
+            margin: 1em;
+            z-index: 100;
+            width: 97.5%;
+        }
+        header img {
+            display: none;
+        }
+        .icons {
+            display: none;
+        }
+        header nav {
+            margin: 1em;
+        }
+        header h1 {
+            font-family: "Covered By Your Grace", cursive;
+            font-weight: 400;
+            font-style: normal;
+            margin-left: 25px;
+            color: white;
+        }
+        header h1 span {
+            color: goldenrod;
+        }
+        header nav a {
+            margin: 20px;
+            text-decoration: none;
+            font-family: "Covered By Your Grace", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 30px;
+            text-decoration-style: dashed;
+            box-shadow: inset 0 0 0 0 grey;
+            padding: 0 .25rem;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        }
+        header nav a:hover {
+            color: goldenrod;
+        }
+        #banner {
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: inset 0 0 40px black;
+        }
+        #banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(img/slideshow1.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: brightness(80%);
+            z-index: -1;
+        }
+        #banner h1 {
+            font-family: "Covered By Your Grace", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 5em;
+            color: white;
+            margin: 0;
+            text-shadow: 0px 2px 12px black;
+        }
+        #banner h1 span {
+            color: goldenrod;
+        }
+        #banner h2 {
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            text-shadow: 0px 2px 12px rgba(255, 228, 0, 1);
+            font-size: 2em;
+        }
+        #banner h2 span {
+            color: goldenrod;
+        }
+        #road-container {
+            background-image: url(img/road.jpg);
+            background-repeat: repeat-y;
+            background-position: center top;
+            background-size: 300px auto;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 5em;
+        }
+        .content-card {
+            margin-right: 850px;
+            margin-top: 4em;
+            background: white;
+            padding: 22px 24px;
+            border-radius: 15px;
+            width: 420px;
+            font-family: "PT Sans", sans-serif;
+            box-shadow: 0 0 30px rgb(255, 255, 0);
+            text-align: center;
+            z-index: 10;
+        }
+        .content-card img {
+            margin-top: 20px;
+            width: 25em;
+            height: 20em;
+            border-radius: 2em;
+            object-fit: cover;
+        }
+        .content-card:hover {
+            transition: 0.3s ease;
+            transform: scale(1.04);
+        }
+        .content-card2 {
+            margin-left: 850px;
+            background: white;
+            padding: 22px 24px;
+            border-radius: 15px;
+            width: 420px;
+            font-family: "PT Sans", sans-serif;
+            box-shadow: 0 0 30px rgb(255, 255, 0);
+            text-align: center;
+            z-index: 10;
+        }
+        .content-card2 img {
+            margin-top: 20px;
+            width: 25em;
+            height: 20em;
+            border-radius: 2em;
+            object-fit: cover;
+        }
+        .content-card2:hover {
+            transition: 0.3s ease;
+            transform: scale(1.04);
+        }
+        .content-card h3 {
+            font-size: 1.8em;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            font-family: "Covered By Your Grace", cursive;
+        }
+        .content-card2 h3 {
+            font-size: 1.8em;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            font-family: "Covered By Your Grace", cursive;
+        }
+        .content-card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .content-card2 p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .icone {
+            font-size: 2.5em;
+            margin-bottom: 6px;
+        }
+        .destaque {
+            background-color: rgb(255, 250, 220);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-top: 12px;
+            font-size: 0.85em;
+            font-weight: 700;
+            color: #7a5800;
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 3em 2em 1em;
+            position: relative;
+        }
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            min-width: 180px;
+            margin-bottom: 2em;
+        }
+        .footer-col h3 {
+            font-family: "Covered By Your Grace", cursive;
+            font-size: 2em;
+            font-weight: 400;
+            margin: 0 0 0.2em;
+            color: white;
+        }
+        .footer-col h3 span {
+            color: goldenrod;
+        }
+        .footer-col h4 {
+            font-family: "Covered By Your Grace", cursive;
+            font-size: 1.5em;
+            font-weight: 400;
+            margin: 0 0 0.3em;
+            color: goldenrod;
+        }
+        .footer-col p {
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.88em;
+            color: #aaa;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .footer-col a {
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.88em;
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: goldenrod;
+        }
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 1em;
+            margin-top: 1em;
+        }
+        .footer-bottom p {
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.78em;
+            color: #555;
+            margin: 0;
+        }
+        .footer-col li {
+            display: flex;
+            align-items: flex-start;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+        @media screen and (max-width: 900px) {
+            header {
+                max-width: 90%;
+                margin-left: 0;
+                margin: 1em;
+            }
+            header h1 {
+                display: none;
+            }
+            header img {
+                display: block;
+                height: 8vh;
+            }
+            .icons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            .icons .icon1 {
+                margin-left: 0px;
+            }
+            .icons .dropdown img {
+                filter: invert(1);
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content {
+                position: absolute;
+                background: white;
+                width: 90vw;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s;
+                pointer-events: none;
+                border-radius: 20px;
+                margin-left: -70.1vw;
+            }
+            .dropdown:hover .dropdown-content {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .dropdown-content a {
+                color: #374151;
+                padding: 0.5rem 1rem;
+                text-decoration: none;
+                display: block;
+                font-family: "PT Sans", sans-serif;
+            }
+            .dropdown-content a:hover {
+                background: #f3f4f6;
+            }
+            header nav {
+                display: none;
+            }
+            header nav a {
+                display: none;
+            }
+            #banner {
+                height: 50vh;
+                background-size: 700px;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                display: flex;
+                justify-content: end;
+            }
+            #banner h1 {
+                font-size: 2.5em;
+            }
+            #banner h2 {
+                font-size: 1.2em;
+                margin-bottom: 3em;
+                text-align: center;
+                width: 18em;
+            }
+            #road-container {
+                background-image: none;
+            }
+            .content-card {
+                margin: 0;
+                width: 70vw;
+                margin-top: 3em;
+            }
+            .content-card img {
+                margin-top: 20px;
+                width: 15em;
+                height: 10em;
+                border-radius: 1em;
+                object-fit: cover;
+            }
+            .content-card2 {
+                margin: 0;
+                width: 70vw;
+                margin-top: 3em;
+            }
+            .content-card2 img {
+                margin-top: 20px;
+                width: 15em;
+                height: 10em;
+                border-radius: 1em;
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="icons">
+            <div class="icon1">
+                <img src="img/rs.png" alt="">
+            </div>
+            <div class="dropdown">
+                <img src="svg/dropdown.svg" alt="">
+                <div class="dropdown-content">
+                    <a href="index.html">Sobre Nós</a>
+                    <a href="noticias.html">Notícias</a>
+                    <a href="Regras.html">Regras de Segurança</a>
+                    <a href="">Jogo</a>
+                    <a href="">Contactos</a>
+                </div>
+            </div>
+        </div>
+        <h1>Rodo<span>Segurança</span></h1>
+        <nav>
+            <a href="index.html">Sobre Nós</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="Regras.html">Regras de Segurança</a>
+            <a href="">Jogo</a>
+            <a href="">Contactos</a>
+        </nav>
+    </header>
+    <section id="banner">
+        <h1>Regras d<span>e segurança</span></h1>
+        <h2>Todo segundo vale na <span>Rodovia</span></h2>
+    </section>
+    <main id="road-container">
+        <div class="content-card">
+            <h3>Limites de Velocidade</h3>
+            <p>Dentro das localidades o limite é de <strong>50 km/h</strong>. Em estradas nacionais e regionais pode circular até <strong>90–100 km/h</strong>. Nas autoestradas o máximo é de <strong>120 km/h</strong>.</p>
+            <div class="destaque">⚠️ Com chuva ou nevoeiro, reduza sempre a velocidade</div>
+            <img src="img/limites-de-velocidade.jpg" alt="">
+        </div>
+        <div class="content-card2">
+            <h3>Álcool ao Volante</h3>
+            <p>O limite legal de álcool no sangue é de <strong>0,5 g/l</strong> para condutores em geral. Para condutores novos (menos de 3 anos de carta) e profissionais, o limite desce para <strong>0,2 g/l</strong>.</p>
+            <div class="destaque">⚠️ A partir de 1,2 g/l é considerado crime público</div>
+            <img src="img/drogas-alcool-direcao-citycar.jpg" alt="">
+        </div>
+        <div class="content-card">
+            <h3>Uso do Telemóvel</h3>
+            <p>É <strong>proibido</strong> usar o telemóvel na mão enquanto conduz. Apenas é permitido com um sistema de mãos-livres integrado no veículo. A infração resulta em coima e perda de 2 pontos na carta.</p>
+            <div class="destaque">⚠️ Coima entre €240 e €1.200 em 2026</div>
+            <img src="img/telemovelnotransito.png" alt="">
+        </div>
+        <div class="content-card2">
+            <h3>Cinto de Segurança</h3>
+            <p>O cinto é <strong>obrigatório para todos os ocupantes</strong> do veículo, incluindo os passageiros de trás. Crianças com menos de 135 cm de altura devem usar sempre um sistema de retenção homologado.</p>
+            <div class="destaque">⚠️ Coima entre €120 e €600 por infração</div>
+            <img src="img/cinto-de-seguranca-renovias.jpg" alt="">
+        </div>
+        <div class="content-card">
+            <h3>Fadiga ao Volante</h3>
+            <p>Em viagens longas faça uma pausa de <strong>15 minutos a cada 2 horas</strong>. A sonolência é responsável por cerca de <strong>20% dos acidentes mortais</strong> em Portugal. Nunca conduza com menos de 6 horas de sono.</p>
+            <div class="destaque">⚠️ Fadiga é tão perigosa quanto o álcool</div>
+            <img src="img/fadiga.jpg" alt="">
+        </div>
+        <div class="content-card2">
+            <h3>Distância de Segurança</h3>
+            <p>Mantenha sempre uma distância do veículo da frente que lhe permita parar em segurança. A regra dos <strong>2 segundos</strong> é o mínimo recomendado. Com piso molhado, aumente para <strong>4 segundos</strong>.</p>
+            <div class="destaque">⚠️ A 90 km/h percorre 25 metros por segundo</div>
+            <img src="img/distanciaseguranca.jpg" alt="">
+        </div>
+        <div class="content-card">
+            <h3>Sinais de Trânsito</h3>
+            <p>Respeite sempre os sinais luminosos, verticais e as marcações no pavimento. Em cruzamentos sem sinalização, a <strong>prioridade é do veículo vindo da direita</strong>. Os agentes de trânsito têm sempre precedência.</p>
+            <div class="destaque">⚠️ Ignorar um sinal vermelho é infração grave</div>
+            <img src="img/sinaisde.png" alt="">
+        </div>
+        <div class="content-card2">
+            <h3>Inspeção do Veículo</h3>
+            <p>A inspeção periódica obrigatória (IPO) é feita <strong>4 anos após a primeira matrícula</strong> e depois de 2 em 2 anos. O seguro de responsabilidade civil é <strong>sempre obrigatório</strong>. Circular sem estes documentos implica coima e apreensão do veículo.</p>
+            <div class="destaque">⚠️ Verifique pneus, travões e luzes regularmente</div>
+            <img src="img/veicular.webp" alt="">
+        </div>
+    </main>
+    <footer>
+        <div class="footer-col">
+            <h3>Rodo<span>Segurança</span></h3>
+            <p>A plataforma portuguesa dedicada à promoção da segurança nas estradas.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Páginas</h4>
+            <a href="index.html">Sobre Nós</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="Regras.html">Regras de Segurança</a>
+            <a href="">Jogo</a>
+            <a href="">Contactos</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contactos</h4>
+            <li>
+                <p>ANSR</p>
+            </li>
+            <p>351 214 236 800</p>
+            <li>
+                <p>GNR</p>
+            </li>
+            <p>351 213 217 000</p>
+            <li>
+                <p>PSP</p>
+            </li>
+            <p>351 218 111 000</p>
+            <li>
+                <p>RodoSegurança</p>
+            </li>
+            <p>ash@becas.dog</p>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RodoSegurança. Todos os direitos não reservados. Nós não existimos. - Feito com amor pelo grupo da segurança rodoviária da turma 219 da EPAD Picoas</p>
+        </div>
+    </footer>
+</body>
+</html>

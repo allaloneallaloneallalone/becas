@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RodoSegurança</title>
+    <link rel="icon" type="image/x-icon" href="img/rs.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+        body {
+            margin: 0;
+        }
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            position: fixed;
+            font-size: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            top: 0;
+            left: 0;
+            justify-content: space-between;
+            border-radius: 20px;
+            margin: 1em;
+            z-index: 100;
+            width: 97.5%;
+        }
+        header img {
+            display: none;
+        }
+        .icons {
+            display: none;
+        }
+        header nav {
+            margin: 1em;
+        }
+        header h1 {
+            font-family: "Covered By Your Grace", cursive;
+            font-weight: 400;
+            font-style: normal;
+            margin-left: 25px;
+            color: white;
+        }
+        header h1 span {
+            color: goldenrod;
+        }
+        header nav a {
+            margin: 20px;
+            text-decoration: none;
+            font-family: "Covered By Your Grace", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 30px;
+            text-decoration-style: dashed;
+            box-shadow: inset 0 0 0 0 grey;
+            padding: 0 .25rem;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        }
+        header nav a:hover {
+            color: goldenrod;
+        }
+        #banner {
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: inset 0 0 40px black;
+        }
+        #banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(img/slideshow1.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: brightness(80%);
+            z-index: -1;
+        }
+        #banner h1 {
+            font-family: "Covered By Your Grace", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 5em;
+            color: white;
+            margin: 0;
+            text-shadow: 0px 2px 12px black;
+        }
+        #banner h1 span {
+            color: goldenrod;
+        }
+        #banner h2 {
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            text-shadow: 0px 2px 12px rgba(255, 228, 0, 1);
+            font-size: 2em;
+        }
+        #road-container {
+            background-image: url(img/road.jpg);
+            background-repeat: repeat-y;
+            background-position: center top;
+            background-size: 300px auto;
+            min-height: 1400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 4em;
+        }
+        .content-card {
+            margin-right: 850px;
+            margin-top: 4em;
+            background: white;
+            padding: 22px 24px;
+            border-radius: 15px;
+            width: 420px;
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.95em;
+            box-shadow: 0 0 30px rgb(255, 255, 0);
+            text-align: center;
+            z-index: 10;
+        }
+        .content-card:hover {
+            transition: 0.3s ease;
+            transform: scale(1.04);
+        }
+        .content-card2 {
+            margin-left: 850px;
+            background: white;
+            padding: 22px 24px;
+            border-radius: 15px;
+            width: 420px;
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.95em;
+            box-shadow: 0 0 30px rgb(255, 255, 0);
+            text-align: center;
+            z-index: 10;
+        }
+        .content-card2:hover {
+            transition: 0.3s ease;
+            transform: scale(1.04);
+        }
+        .content-card2 img {
+            height: 220px;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-top: 14px;
+        }
+        .content-card3 {
+            margin-right: 850px;
+            background: white;
+            padding: 22px 24px;
+            border-radius: 15px;
+            width: 420px;
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.95em;
+            box-shadow: 0 0 30px rgb(255, 255, 0);
+            text-align: center;
+            z-index: 10;
+        }
+        .content-card3:hover {
+            transition: 0.3s ease;
+            transform: scale(1.04);
+        }
+        .content-card h3 {
+            font-size: 1.5em;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            font-family: "Covered By Your Grace", cursive;
+        }
+        .content-card2 h3 {
+            font-size: 1.5em;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            font-family: "Covered By Your Grace", cursive;
+        }
+        .content-card3 h3 {
+            font-size: 1.5em;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            font-family: "Covered By Your Grace", cursive;
+        }
+        .content-card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .content-card2 p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .content-card3 p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .content-card3 iframe {
+            width: 100%;
+            max-width: 370px;
+            height: 280px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 12px;
+            text-align: center;
+        }
+        .team-member {
+            background: #fffbec;
+            border-radius: 10px;
+            padding: 10px 6px;
+            border: 1px solid #f0e0a0;
+        }
+        .team-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, goldenrod, #b8860b);
+            border-radius: 50%;
+            margin: 0 auto 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Covered By Your Grace", cursive;
+            font-size: 1em;
+            color: white;
+        }
+        .team-member .name {
+            font-weight: 700;
+            font-size: 0.78em;
+            margin-bottom: 2px;
+            font-family: "PT Sans", sans-serif;
+        }
+        .team-member .role {
+            font-size: 0.68em;
+            color: #888;
+            font-family: "PT Sans", sans-serif;
+        }
+        .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            text-align: left;
+        }
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+        .values-list li:last-child {
+            border-bottom: none;
+        }
+        .values-list .icon-v {
+            font-size: 1.1em;
+            min-width: 1.4em;
+            margin-top: 1px;
+        }
+        .values-list strong {
+            display: block;
+            font-size: 0.96em;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+            box-shadow: 0 0 30px rgb(255, 255, 0);
+            border-radius: 50px;
+        }
+        .prev {
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            padding: 16px;
+            border-radius: 0 10px 10px 0;
+            background: rgba(0, 0, 0, .5);
+            transition: all .3s;
+        }
+        .next {
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            padding: 16px;
+            border-radius: 0 10px 10px 0;
+            background: rgba(0, 0, 0, .5);
+            transition: all .3s;
+        }
+        .container img {
+            height: 20em;
+            width: 30em;
+            filter: brightness(70%);
+            border-radius: 50px;
+        }
+        .container h2 {
+            display: flex;
+            font-size: 1em;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            width: 80%;
+            font-weight: 300;
+            text-align: left;
+            font-family: "PT Sans", sans-serif;
+        }
+        #noticias {
+            background-color: rgb(255, 250, 160);
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #noticias h1 {
+            margin: 1em;
+            font-family: "Roboto Flex", sans-serif;
+            font-weight: 400;
+            font-size: 3em;
+            text-shadow: 0 0 30px rgb(255, 255, 255);
+        }
+        .all {
+            display: flex;
+        }
+        .all p {
+            font-size: 2em;
+            font-family: "PT Sans", sans-serif;
+            width: 10em;
+            margin-left: 1.5em;
+        }
+        .cssbuttons-io-button {
+            background: goldenrod;
+            color: white;
+            font-family: "PT Sans", sans-serif;
+            padding: 0.35em;
+            padding-left: 1.2em;
+            font-size: 25px;
+            font-weight: 500;
+            border-radius: 0.9em;
+            border: none;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            box-shadow: inset 0 0 1.6em -0.6em yellow;
+            overflow: hidden;
+            position: relative;
+            height: 2.2em;
+            padding-right: 3.3em;
+            cursor: pointer;
+            margin-left: 2.7em;
+            width: 5em;
+            text-decoration: none;
+        }
+        .cssbuttons-io-button .icon {
+            background: white;
+            margin-left: 1em;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.2em;
+            width: 2.2em;
+            border-radius: 0.7em;
+            box-shadow: 0.1em 0.1em 0.6em 0.2em yellow;
+            right: 0.3em;
+            transition: all 0.3s;
+        }
+        .cssbuttons-io-button:hover .icon {
+            width: calc(100% - 0.6em);
+        }
+        .cssbuttons-io-button .icon svg {
+            width: 1.1em;
+            transition: transform 0.3s;
+            color: black;
+        }
+        .cssbuttons-io-button:hover .icon svg {
+            transform: translateX(0.1em);
+        }
+        .cssbuttons-io-button:active .icon {
+            transform: scale(0.95);
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 3em 2em 1em;
+            position: relative;
+        }
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            min-width: 180px;
+            margin-bottom: 2em;
+        }
+        .footer-col h3 {
+            font-family: "Covered By Your Grace", cursive;
+            font-size: 2em;
+            font-weight: 400;
+            margin: 0 0 0.2em;
+            color: white;
+        }
+        .footer-col h3 span {
+            color: goldenrod;
+        }
+        .footer-col h4 {
+            font-family: "Covered By Your Grace", cursive;
+            font-size: 1.5em;
+            font-weight: 400;
+            margin: 0 0 0.3em;
+            color: goldenrod;
+        }
+        .footer-col p {
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.88em;
+            color: #aaa;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .footer-col a {
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.88em;
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: goldenrod;
+        }
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 1em;
+            margin-top: 1em;
+        }
+        .footer-bottom p {
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.78em;
+            color: #555;
+            margin: 0;
+        }
+        .footer-col li {
+            display: flex;
+            align-items: flex-start;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+            font-family: "PT Sans", sans-serif;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+        @media screen and (max-width: 900px) {
+            #banner {
+                display: flex;
+            }
+            header {
+                max-width: 90%;
+                margin-left: 0;
+                margin: 1em;
+            }
+            header h1 {
+                display: none;
+            }
+            header img {
+                display: block;
+                height: 8vh;
+            }
+            .icons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            .icons .icon1 {
+                margin-left: 0px;
+            }
+            .icons .dropdown img {
+                filter: invert(1);
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content {
+                position: absolute;
+                background: white;
+                width: 90vw;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s;
+                pointer-events: none;
+                border-radius: 20px;
+                margin-left: -70.1vw;
+            }
+            .dropdown:hover .dropdown-content {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .dropdown-content a {
+                color: #374151;
+                padding: 0.5rem 1rem;
+                text-decoration: none;
+                display: block;
+                font-family: "PT Sans", sans-serif;
+            }
+            .dropdown-content a:hover {
+                background: #f3f4f6;
+            }
+            header nav {
+                display: none;
+            }
+            header nav a {
+                display: none;
+            }
+            #banner {
+                height: 50vh;
+                background-size: 700px;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                display: flex;
+                justify-content: end;
+            }
+            #banner h1 {
+                font-size: 2.5em;
+            }
+            #banner h2 {
+                font-size: 1.2em;
+                margin-bottom: 3em;
+                text-align: center;
+                width: 18em;
+            }
+            #road-container {
+                background-image: none;
+            }
+            .content-card {
+                margin: 0;
+                border-radius: 15px;
+                width: 70vw;
+                z-index: 10;
+                margin-top: 3em;
+            }
+            .content-card2 {
+                margin: 0;
+                width: 70vw;
+                margin-top: 3em;
+            }
+            .content-card3 {
+                margin: 0;
+                width: 70vw;
+                margin-top: 3em;
+            }
+            .content-card2 img {
+                width: 15em;
+                height: 10em;
+            }
+            .content-card3 iframe {
+                height: 15em;
+                width: 60vw;
+            }
+            .container img {
+                width: 22em;
+                border-radius: 15px;
+                height: 15em;
+            }
+            #noticias h1 {
+                font-size: 2em;
+            }
+            .container h2 {
+                display: flex;
+                font-size: 1em;
+                position: absolute;
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                width: 80%;
+                font-weight: 300;
+                text-align: center;
+                font-family: "PT Sans", sans-serif;
+            }
+            .all {
+                flex-direction: column;
+            }
+            .all p {
+                display: none;
+            }
+            .cssbuttons-io-button {
+                margin-top: 25px;
+            }
+            #noticias {
+                height: 475px;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="icons">
+            <div class="icon1">
+                <img src="img/rs.png" alt="">
+            </div>
+            <div class="dropdown">
+                <img src="svg/dropdown.svg" alt="">
+                <div class="dropdown-content">
+                    <a href="index.html">Sobre Nós</a>
+                    <a href="noticias.html">Notícias</a>
+                    <a href="Regras.html">Regras de Segurança</a>
+                    <a href="">Jogo</a>
+                    <a href="">Contactos</a>
+                </div>
+            </div>
+        </div>
+        <h1>Rodo<span>Segurança</span></h1>
+        <nav>
+            <a href="index.html">Sobre Nós</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="Regras.html">Regras de Segurança</a>
+            <a href="">Jogo</a>
+            <a href="">Contactos</a>
+        </nav>
+    </header>
+    <section id="banner">
+        <h1>Rodo<span>Segurança</span></h1>
+        <h2>Ter segurança no dia a dia, deixa o hospital fora da vida!</h2>
+    </section>
+    <main id="road-container">
+        <div class="content-card">
+            <h3>Quem somos nós?</h3>
+            <p>
+                A <strong>RodoSegurança</strong> é uma plataforma portuguesa criada em 2022, dedicada à promoção da segurança nas estradas. Nascemos da convicção de que a informação acessível salva vidas. Reunimos profissionais de saúde pública, engenheiros de trânsito e jornalistas especializados com um objetivo comum: <strong>reduzir o número de acidentes e mortes nas estradas portuguesas.</strong>
+            </p>
+                </div>
+            </div>
+        </div>
+        <div class="content-card2">
+            <h3>Os nossos objetivos</h3>
+            <ul class="values-list">
+                <li>
+                    <div><strong>Informar com rigor</strong>Publicamos dados oficiais da ANSR, GNR e PSP, sem sensacionalismo e com contexto claro para o cidadão comum.</div>
+                </li>
+                <li>
+                    <div><strong>Educar para prevenir</strong>Explicamos as regras do Código da Estrada de forma simples, com dicas práticas para condutores, ciclistas e peões.</div>
+                </li>
+                <li>
+                    <div><strong>Sensibilizar a sociedade</strong>Trabalhamos com escolas, empresas e autarquias para levar a mensagem da segurança rodoviária a todas as faixas etárias.</div>
+                </li>
+                <li>
+                    <div><strong>Colaboração institucional</strong>Trabalhamos em estreita ligação com a ANSR, GNR, PSP e INEM para garantir informação verificada e atualizada.</div>
+                </li>
+            </ul>
+            <img src="img/sinistralidade.jpg">
+        </div>
+        <div class="content-card3">
+            <h3>Onde somos localizados</h3>
+            <p>A nossa sede fica em Lisboa, no coração da cidade, mas o nosso trabalho chega a todo o país. Estamos disponíveis presencialmente de segunda a sexta, das 9h às 18h, e online todos os dias.<br><br>
+             <strong>Rua do Ouro, 112 — 1100-062 Lisboa</strong><br>
+             info@rodoseguranca.pt<br>
+             213 000 000</p>
+            <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1555.5992184539143!2d-9.17098166011858!3d38.759152421940236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193356002003c5%3A0x945d2f865fe48b5b!2sSeguran%C3%A7a%20Rodovi%C3%A1ria!5e0!3m2!1spt-PT!2spt!4v1772445484095!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+    <section id="noticias">
+        <h1>Notícias do último mês</h1>
+        <div class="all">
+            <div class="container">
+                <div class="slides">
+                    <img src="img/noticia1.png">
+                    <h2>Quase 132 mil acidentes e 390 mortos nas estradas portuguesas este ano</h2>
+                </div>
+                <div class="slides">
+                    <img src="img/noticia2.png">
+                    <h2>Teto do terminal da rodoviária em Leiria desabou e danificou dezenas de viaturas</h2>
+                </div>
+                <div class="slides">
+                    <img src="img/noticia3.png">
+                    <h2>Mau tempo encerra duas vias rodoviárias em São Roque do Pico</h2>
+                </div>
+                <div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+            <div class="info">
+                <p>Maior parte destas notícias são retiradas de outros websites, mas se quiser ver mais, é só clicar no botão!</p>
+                <a class="cssbuttons-io-button" href="noticias.html">
+                    Ver Mais!
+                    <div class="icon">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-col">
+            <h3>Rodo<span>Segurança</span></h3>
+            <p>A plataforma portuguesa dedicada à promoção da segurança nas estradas.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Páginas</h4>
+            <a href="index.html">Sobre Nós</a>
+            <a href="noticias.html">Notícias</a>
+            <a href="Regras.html">Regras de Segurança</a>
+            <a href="">Jogo</a>
+            <a href="">Contactos</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contactos</h4>
+            <li>
+                <p>ANSR</p>
+            </li>
+            <p>351 214 236 800</p>
+            <li>
+                <p>GNR</p>
+            </li>
+            <p>351 213 217 000</p>
+            <li>
+                <p>PSP</p>
+            </li>
+            <p>351 218 111 000</p>
+            <li>
+                <p>RodoSegurança</p>
+            </li>
+            <p>ash@becas.dog</p>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RodoSegurança. Todos os direitos não reservados. Nós não existimos. - Feito com amor pelo grupo da segurança rodoviária da turma 219 da EPAD Picoas</p>
+        </div>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName('slides');
+            let dots = document.getElementsByClassName('dot');
+
+            if(n > slides.length) { slideIndex = 1 }
+
+            if(n < 1) { slideIndex = slides.length }
+
+            for(let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for(let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+
+            slides[slideIndex - 1].style.display = 'flex';
+
+            if(dots.length > 0) {
+                dots[slideIndex - 1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
